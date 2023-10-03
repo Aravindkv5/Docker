@@ -5,7 +5,7 @@ import connectToDatabase from './helpers.mjs'
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('<h2>Hi there!</h2>');
+  res.send('<h2>Hi there this is my first docker sample!</h2>');
 });
 
 await connectToDatabase();

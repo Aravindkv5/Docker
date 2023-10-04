@@ -1,0 +1,12 @@
+FROM node
+# or we can use FROM node:20 for specific version 
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+EXPOSE 80
+
+CMD ["node", "server.js"]

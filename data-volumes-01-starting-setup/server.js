@@ -36,7 +36,9 @@ app.post('/create', async (req, res) => {
     if (exists) {
       res.redirect('/exists');
     } else {
-      await fs.rename(tempFilePath, finalFilePath);
+      //await fs.rename(tempFilePath, finalFilePath); Uncomment this line while running the docker without volume
+      await fs.copyFile(tempFilePath, finalFilePath); //Comment this line while running the docker container without volume 
+      await fs.unlink(tempFilePath);
       res.redirect('/');
     }
   });

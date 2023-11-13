@@ -37,6 +37,7 @@ services:
     tty: true
     depends_on: 
       - backend
+    container_name: frontend
 
 volumes: 
   data:

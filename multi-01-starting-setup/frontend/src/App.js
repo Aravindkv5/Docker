@@ -15,6 +15,7 @@ function App() {
 
       try {
         const response = await fetch('http://localhost/goals');
+        //const response = await fetch('http://backend-container/goals'); we are commenting backend becase react application will run in the browser not on the conatiner. So if we run the backend-container browser doenst know what it is. so we have to run the react with localhost
 
         const resData = await response.json();
 
@@ -39,6 +40,7 @@ function App() {
     setIsLoading(true);
 
     try {
+      //const response = await fetch('http://backend-container/goals', {
       const response = await fetch('http://localhost/goals', {
         method: 'POST',
         body: JSON.stringify({
@@ -78,6 +80,7 @@ function App() {
     setIsLoading(true);
 
     try {
+      //const response = await fetch('http://backend-container/goals/' + goalId, {
       const response = await fetch('http://localhost/goals/' + goalId, {
         method: 'DELETE',
       });
